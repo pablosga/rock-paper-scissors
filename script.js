@@ -1,40 +1,40 @@
 function getComputerChoice() {
-    let options = ["rock", "paper", "scissors"];
+    let options = ["piedra", "papel", "tijeras"];
     let randomPosition = Math.floor(Math.random() * 3);
     return options[randomPosition];
 }
 
 function getPlayerChoice() {
-    let playerChoice = prompt("Rock, Paper or Scissors?")
+    let playerChoice = prompt("Piedra, Papel or Tijeras?")
     return playerChoice.toLowerCase();
 }
 
 function playRound(getComputerChoice, getPlayerChoice) {
     switch (getPlayerChoice) {
-        case "rock":
-            if (getComputerChoice === "rock") {
+        case "piedra":
+            if (getComputerChoice === "piedra") {
                 return "Empate! Ambos elijieron piedra"
-            } else if (getComputerChoice === "paper") {
+            } else if (getComputerChoice === "papel") {
                 return "Perdiste! Papel vence a Piedra"
             } else {
                 return "Ganaste! Piedra vence a Tijeras"
             }
             break;
 
-        case "paper":
-            if (getComputerChoice === "rock") { 
+        case "papel":
+            if (getComputerChoice === "piedra") { 
                 return "Ganaste! Papel vence a Piedra"
-            } else if (getComputerChoice === "paper") {
+            } else if (getComputerChoice === "papel") {
                 return "Empate! ambos elijieron papel"
             } else {
                 return "Perdiste! Tijeras vence a Papel"
             }
             break;
 
-        case "scissors":
-            if (getComputerChoice === "rock") {
+        case "tijeras":
+            if (getComputerChoice === "piedra") {
                 return "Perdiste! Piedra vence a Tijeras"
-            } else if (getComputerChoice === "paper") {
+            } else if (getComputerChoice === "papel") {
                 return "Ganaste! Tijeras vence a Papel"
             } else {
                 return "Empate! ambos elijieron Tijeras"
@@ -42,7 +42,4 @@ function playRound(getComputerChoice, getPlayerChoice) {
             break;
     }
 }
-
-
-
 
