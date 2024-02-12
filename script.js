@@ -43,3 +43,24 @@ function playRound(getComputerChoice, getPlayerChoice) {
     }
 }
 
+function playGame() {
+    let playerWinsCounter = 0;
+    let computerWinsCounter = 0;
+    for (let round = 1; round <= 5; round++) {
+        let result = playRound(getComputerChoice(), getPlayerChoice());
+        console.log(result)
+        if (result[0] === "G") {
+            playerWinsCounter++
+        } else if (result[0] === "P") {
+            computerWinsCounter++
+        }
+    }
+    if (playerWinsCounter > computerWinsCounter) {
+        console.log(`Ganaste! ${playerWinsCounter} a ${computerWinsCounter}`)
+    } else if (playerWinsCounter < computerWinsCounter) {
+        console.log(`Perdiste! ${computerWinsCounter} a ${playerWinsCounter}`)
+    } else {console.log(`Empate! ${computerWinsCounter} a ${playerWinsCounter}`)}
+} 
+
+playGame()
+
