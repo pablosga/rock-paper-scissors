@@ -38,12 +38,32 @@ function playRound(getComputerChoice, getPlayerChoice) {
     }
 }
 
-let resultado = document.querySelector("span");
-
+let resultadoMostrado = document.querySelector("span");
 let botones = document.querySelectorAll("button");
 botones = Array.from(botones);
-botones.forEach((boton) => {
-    boton.addEventListener("click", () => 
-    resultado.textContent = (playRound(getComputerChoice(), boton.id)));
-})
 
+let playerScore = document.querySelector("#player-score");
+let computerScore = document.querySelector("#computer-score");
+playerScore.textContent = "0";
+computerScore.textContent = "0";
+let playerCounter = 0;
+let computerCounter = 0;
+
+function playGame(botonPresionado) {
+    if (playerCounter < 5 && computerCounter < 5) {
+        resultadoObtenido = playRound(getComputerChoice(), botonPresionado);
+        resultadoMostrado.textContent = resultadoObtenido;  
+        if (resultadoObtenido[0] === "G") {
+            playerCounter++;
+            playerScore.textContent = playerCounter;
+        } else if (resultadoObtenido[0] === "P") {
+            computerCounter++;
+            computerScore.textContent = computerCounter;
+        }
+    } else {}
+        
+}
+
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => playGame(boton.id));
+})
