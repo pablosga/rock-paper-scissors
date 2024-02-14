@@ -49,6 +49,7 @@ computerScore.textContent = "0";
 let playerCounter = 0;
 let computerCounter = 0;
 let playAgain = document.querySelector("#play-again");
+let ganador = document.querySelector("#ganador"); 
 
 function playGame(botonPresionado) {
     if (playerCounter < 5 && computerCounter < 5) {
@@ -61,7 +62,11 @@ function playGame(botonPresionado) {
             computerCounter++;
             computerScore.textContent = computerCounter;
         }
-        if (playerCounter === 5 || computerCounter === 5) {
+        if (playerCounter === 5) {
+            ganador.textContent = `Felicidades! ganaste ${playerCounter} a ${computerCounter}`;
+            playAgain.removeAttribute("hidden");
+        } else if (computerCounter === 5) {
+            ganador.textContent = `Oh no! perdiste ${computerCounter} a ${playerCounter}`;
             playAgain.removeAttribute("hidden");
         }
     }
@@ -76,5 +81,7 @@ playAgain.addEventListener("click", function() {
     playerCounter = computerCounter = 0;
     playerScore.textContent = computerScore.textContent = "0";
     playAgain.setAttribute("hidden", true);
+    ganador.textContent = null;
+    resultadoMostrado.textContent = null; 
 });
 
