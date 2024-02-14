@@ -1,11 +1,3 @@
-let botones = document.querySelectorAll("button");
-botones = Array.from(botones);
-botones.forEach((boton) => {
-    boton.addEventListener("click", () => 
-    console.log(playRound(getComputerChoice(), boton.id)));
-})
-
-
 function getComputerChoice() {
     let options = ["piedra", "papel", "tijera"];
     let randomPosition = Math.floor(Math.random() * 3);
@@ -45,4 +37,13 @@ function playRound(getComputerChoice, getPlayerChoice) {
             break;
     }
 }
+
+let resultado = document.querySelector("span");
+
+let botones = document.querySelectorAll("button");
+botones = Array.from(botones);
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => 
+    resultado.textContent = (playRound(getComputerChoice(), boton.id)));
+})
 
