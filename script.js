@@ -1,12 +1,15 @@
+let botones = document.querySelectorAll("button");
+botones = Array.from(botones);
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => 
+    console.log(playRound(getComputerChoice(), boton.id)));
+})
+
+
 function getComputerChoice() {
-    let options = ["piedra", "papel", "tijeras"];
+    let options = ["piedra", "papel", "tijera"];
     let randomPosition = Math.floor(Math.random() * 3);
     return options[randomPosition];
-}
-
-function getPlayerChoice() {
-    let playerChoice = prompt("Piedra, Papel or Tijeras?")
-    return playerChoice.toLowerCase();
 }
 
 function playRound(getComputerChoice, getPlayerChoice) {
@@ -17,7 +20,7 @@ function playRound(getComputerChoice, getPlayerChoice) {
             } else if (getComputerChoice === "papel") {
                 return "Perdiste! Papel vence a Piedra"
             } else {
-                return "Ganaste! Piedra vence a Tijeras"
+                return "Ganaste! Piedra vence a Tijera"
             }
             break;
 
@@ -27,40 +30,19 @@ function playRound(getComputerChoice, getPlayerChoice) {
             } else if (getComputerChoice === "papel") {
                 return "Empate! ambos elijieron papel"
             } else {
-                return "Perdiste! Tijeras vence a Papel"
+                return "Perdiste! Tijera vence a Papel"
             }
             break;
 
-        case "tijeras":
+        case "tijera":
             if (getComputerChoice === "piedra") {
-                return "Perdiste! Piedra vence a Tijeras"
+                return "Perdiste! Piedra vence a Tijera"
             } else if (getComputerChoice === "papel") {
-                return "Ganaste! Tijeras vence a Papel"
+                return "Ganaste! Tijera vence a Papel"
             } else {
-                return "Empate! ambos elijieron Tijeras"
+                return "Empate! ambos elijieron Tijera"
             }
             break;
     }
 }
-
-function playGame() {
-    let playerWinsCounter = 0;
-    let computerWinsCounter = 0;
-    for (let round = 1; round <= 5; round++) {
-        let result = playRound(getComputerChoice(), getPlayerChoice());
-        console.log(result)
-        if (result[0] === "G") {
-            playerWinsCounter++
-        } else if (result[0] === "P") {
-            computerWinsCounter++
-        }
-    }
-    if (playerWinsCounter > computerWinsCounter) {
-        console.log(`Ganaste! ${playerWinsCounter} a ${computerWinsCounter}`)
-    } else if (playerWinsCounter < computerWinsCounter) {
-        console.log(`Perdiste! ${computerWinsCounter} a ${playerWinsCounter}`)
-    } else {console.log(`Empate! ${computerWinsCounter} a ${playerWinsCounter}`)}
-} 
-
-playGame()
 
