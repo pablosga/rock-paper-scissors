@@ -48,6 +48,7 @@ playerScore.textContent = "0";
 computerScore.textContent = "0";
 let playerCounter = 0;
 let computerCounter = 0;
+let playAgain = document.querySelector("#play-again");
 
 function playGame(botonPresionado) {
     if (playerCounter < 5 && computerCounter < 5) {
@@ -60,10 +61,20 @@ function playGame(botonPresionado) {
             computerCounter++;
             computerScore.textContent = computerCounter;
         }
-    } else {}
-        
+        if (playerCounter === 5 || computerCounter === 5) {
+            playAgain.removeAttribute("hidden");
+        }
+    }
 }
+        
 
 botones.forEach((boton) => {
     boton.addEventListener("click", () => playGame(boton.id));
 })
+
+playAgain.addEventListener("click", function() {
+    playerCounter = computerCounter = 0;
+    playerScore.textContent = computerScore.textContent = "0";
+    playAgain.setAttribute("hidden", true);
+});
+
