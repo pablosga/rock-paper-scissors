@@ -38,7 +38,7 @@ function playRound(getComputerChoice, getPlayerChoice) {
     }
 }
 
-let resultadoMostrado = document.querySelector("span");
+let resultadoMostrado = document.querySelector("#resultado");
 let botones = document.querySelectorAll("button");
 botones = Array.from(botones);
 
