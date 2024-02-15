@@ -3,19 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
         <script src="script.js" defer></script>
         <title>Piedra, Papel o Tijera</title>
     </head>
     <body>
+        <h1>Piedra, Papel o Tijera</h1>
 
         <div id="container">
-            <button id="piedra">Piedra</button>
-            <button id="papel">Papel</button>
-            <button id="tijera">Tijera</button>
+            <button id="piedra"><img src="images/piedra.png"></button>
+            <button id="papel"><img src="images/papel.png"></button>
+            <button id="tijera"><img src="images/tijera.png"></button>
         </div>
         
-        <h3>Resultado de la jugada: </h3><span id="resultado"></span>
-        
+        <div>
+            <h3>Resultado de la jugada: </h3><span id="resultado"></span>
+        </div>
+
         <div>
             <h3>Puntuaciones</h3>
             <div>Tu: <span id="player-score"></span></div>
