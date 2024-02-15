@@ -10,25 +10,28 @@
     <body>
         <h1>Piedra, Papel o Tijera</h1>
 
+        <div id="scores">
+            <div>Jugador Puntuacion: <span id="player-score"></span></div>
+            <div>Computador Puntuacion: <span id="computer-score"></span></div>
+        </div>
+
         <div id="container">
             <button id="piedra"><img src="images/piedra.png"></button>
             <button id="papel"><img src="images/papel.png"></button>
             <button id="tijera"><img src="images/tijera.png"></button>
         </div>
         
-        <div>
-            <h3>Resultado de la jugada: </h3><span id="resultado"></span>
+        <div id="cuadro-resultados">
+            <div>
+                <h3>Resultado de la jugada: </h3>
+                <div id="resultado"></div>
+                <h2 id="ganador"></h2>
+                <button id="play-again" hidden="true" >Jugar de Nuevo</button>
+            </div>
+            
         </div>
 
-        <div>
-            <h3>Puntuaciones</h3>
-            <div>Tu: <span id="player-score"></span></div>
-            <div>Computador: <span id="computer-score"></span></div>
-        </div>
-
-        <h2 id="ganador"></h2>
-
-        <button id="play-again" hidden="true" >Jugar de Nuevo?</button>
+        
 
     </body>
 </html>
